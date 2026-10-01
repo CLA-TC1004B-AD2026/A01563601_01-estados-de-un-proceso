@@ -1,0 +1,18 @@
+{
+  "name": "Python para estudiantes",
+
+  // Para otra versión de Python, cambia el 3.12 (por ejemplo 3.13-bookworm)
+  "image": "mcr.microsoft.com/devcontainers/python:3.12-bookworm",
+
+  // Instala las dependencias solo si el repositorio tiene requirements.txt
+  "postCreateCommand": "if [ -f requirements.txt ]; then pip install --user -r requirements.txt; fi",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",   // ejecutar, depurar y autocompletar (incluye Pylance)
+        "ms-toolsai.jupyter"  // notebooks .ipynb, quítala si no se usan
+      ]
+    }
+  }
+}
